@@ -2,23 +2,31 @@
 <html lang="es">
 
 <head>
-
+<link rel="manifest" href="manifest.json">
 <meta charset="UTF-8">
 
 <title>Picale</title>
 
 <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
 
-    <link rel="manifest" href="manifest.json">
+
 </head>
 
 <body>
 
 
-    <script src="carga.js"></script>
-    <script src="inicio.js"></script>
-    <script src="juego.js"></script>
-    <script src="main.js"></script>
+    <script src="js/carga.js"></script>
+    <script src="js/inicio.js"></script>
+    <script src="js/juego.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker registrado"))
+    .catch(error => console.log("Error:", error));
+}
+</script>
 
 </body>
 </html>
